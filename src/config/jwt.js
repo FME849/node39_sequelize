@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
-import { responseApi } from './response';
+import { responseApi } from './response.js';
 
-export const checkToken = (token) => jwt.verify(token, "SECRET", (err, decode) => err);
+export const checkToken = (token) => jwt.verify(token, "SECRET", (err) => err);
 export const decodedToken = (token) => jwt.decode(token);
 export const midVerifyToken = (req, res, next) => {
     let { token } = req.headers;
