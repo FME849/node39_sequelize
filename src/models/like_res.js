@@ -25,6 +25,11 @@ export default class like_res extends Model {
     date_like: {
       type: DataTypes.DATE,
       allowNull: true
+    },
+    liked: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: 1
     }
   }, {
     sequelize,
