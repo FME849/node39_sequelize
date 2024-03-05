@@ -58,6 +58,4 @@ export const handleLikeRestaurant = async (req, res) => {
         await model.like_res.upsert(updatedLike);
         responseApi(res, 200, updatedLike, 'Already liked')
     }
-
-
 }
