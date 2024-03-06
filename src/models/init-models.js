@@ -23,6 +23,8 @@ export default function initModels(sequelize) {
   restaurant.belongsToMany(users, { as: 'user_id_users_rate_res', through: rate_res, foreignKey: "res_id", otherKey: "user_id" });
   users.belongsToMany(restaurant, { as: 'res_id_restaurants', through: like_res, foreignKey: "user_id", otherKey: "res_id" });
   users.belongsToMany(restaurant, { as: 'res_id_restaurant_rate_res', through: rate_res, foreignKey: "user_id", otherKey: "res_id" });
+  food_order.belongsTo(food, { as: "food", foreignKey: "food_id"});
+  food.hasMany(food_order, { as: "food_orders", foreignKey: "food_id"});
   sub_food.belongsTo(food, { as: "food", foreignKey: "food_id"});
   food.hasMany(sub_food, { as: "sub_foods", foreignKey: "food_id"});
   food.belongsTo(food_type, { as: "type", foreignKey: "type_id"});
@@ -31,6 +33,8 @@ export default function initModels(sequelize) {
   restaurant.hasMany(like_res, { as: "like_res", foreignKey: "res_id"});
   rate_res.belongsTo(restaurant, { as: "re", foreignKey: "res_id"});
   restaurant.hasMany(rate_res, { as: "rate_res", foreignKey: "res_id"});
+  food_order.belongsTo(users, { as: "user", foreignKey: "user_id"});
+  users.hasMany(food_order, { as: "food_orders", foreignKey: "user_id"});
   like_res.belongsTo(users, { as: "user", foreignKey: "user_id"});
   users.hasMany(like_res, { as: "like_res", foreignKey: "user_id"});
   rate_res.belongsTo(users, { as: "user", foreignKey: "user_id"});
