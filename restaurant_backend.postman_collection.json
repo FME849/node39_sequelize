@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "7af1aa85-f419-48da-a8c3-dc74a77423ba",
+		"name": "restaurant_backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18220820",
+		"_collection_link": "https://walless.postman.co/workspace/New-Team-Workspace~926a8d92-23ee-4e51-98dc-fc24941e13ef/collection/18220820-7af1aa85-f419-48da-a8c3-dc74a77423ba?action=share&source=collection_link&creator=18220820"
+	},
+	"item": [
+		{
+			"name": "like",
+			"item": [
+				{
+					"name": "get-like-restaurant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{restaurant_backend_like}}/get-like-restaurant/1",
+							"host": [
+								"{{restaurant_backend_like}}"
+							],
+							"path": [
+								"get-like-restaurant",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-like-user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjF9.9YGIIRVW8KCic8IvAy-sLwYT90YpUwJSd3Rv2G7p2w4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{restaurant_backend_like}}/get-like-user/1",
+							"host": [
+								"{{restaurant_backend_like}}"
+							],
+							"path": [
+								"get-like-user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "like-restaurant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjF9.9YGIIRVW8KCic8IvAy-sLwYT90YpUwJSd3Rv2G7p2w4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{restaurant_backend_like}}/like-restaurant/10",
+							"host": [
+								"{{restaurant_backend_like}}"
+							],
+							"path": [
+								"like-restaurant",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "rate",
+			"item": [
+				{
+					"name": "get-rate-restaurant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{restaurant_backend_rate}}/get-rate-restaurant/1",
+							"host": [
+								"{{restaurant_backend_rate}}"
+							],
+							"path": [
+								"get-rate-restaurant",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-rate-user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjF9.9YGIIRVW8KCic8IvAy-sLwYT90YpUwJSd3Rv2G7p2w4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{restaurant_backend_rate}}/get-rate-user/1",
+							"host": [
+								"{{restaurant_backend_rate}}"
+							],
+							"path": [
+								"get-rate-user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rate-restaurant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjF9.9YGIIRVW8KCic8IvAy-sLwYT90YpUwJSd3Rv2G7p2w4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"restaurantId\": 10,\n    \"amount\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{restaurant_backend_rate}}/rate-restaurant",
+							"host": [
+								"{{restaurant_backend_rate}}"
+							],
+							"path": [
+								"rate-restaurant"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "order-food",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjF9.9YGIIRVW8KCic8IvAy-sLwYT90YpUwJSd3Rv2G7p2w4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"foodId\": 30,\n    \"amount\": 2,\n    \"discountCode\": null,\n    \"subFoodId\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{restaurant_backend_order}}/order-food",
+							"host": [
+								"{{restaurant_backend_order}}"
+							],
+							"path": [
+								"order-food"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "restaurant_backend_like",
+			"value": "http://localhost:8000/like",
+			"type": "string"
+		},
+		{
+			"key": "restaurant_backend_rate",
+			"value": "http://localhost:8000/rate",
+			"type": "string"
+		},
+		{
+			"key": "restaurant_backend_order",
+			"value": "http://localhost:8000/order",
+			"type": "string"
+		}
+	]
+}
